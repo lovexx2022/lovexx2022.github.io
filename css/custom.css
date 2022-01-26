@@ -1,0 +1,305 @@
+/* 页面瘦身 
+.layout{
+  max-width: 1200px;
+}
+.layout {
+padding: 1rem;
+}
+*/
+
+/* 全局透明 */
+#footer{
+  background: transparent!important;   /* 页脚透明 */
+}
+#footer::before{
+    background: transparent!important;  /* 页脚黑色透明玻璃效果移除 */
+}
+#page-header{
+  background: transparent!important;   /* 头图透明 */
+}
+#page-header.post-bg:before {
+  background-color: transparent!important;  /*top-img黑色透明玻璃效果移除，不建议加，除非你执着于完全一图流或者背景图对比色明显 */
+}
+[data-theme="dark"]
+  #footer::before{
+      background: transparent!important;   /*夜间模式伪类遮罩层透明*/
+}
+[data-theme="dark"]
+  #page-header::before{
+    background: transparent!important;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(73, 177, 245, 0.2);
+  border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #49b1f5;
+  background-image: -webkit-linear-gradient( 45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);
+  border-radius: 2em;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+::-moz-selection {
+  color: #fff;
+  background-color: #49b1f5;
+}
+
+/* 动态说说 */
+:root{
+  --benjamin-white: #fff;
+  --benjamin-black: #000;
+  --benjamin-none: rgba(0,0,0,0);
+  --benjamin-gray: #999999;
+  --benjamin-yellow: #ffc93e;
+  --benjamin-main: #007AFF;
+  --benjamin-shadow-blue: 0 8px 12px -3px rgba(40, 109, 234,.20);
+  --benjamin-shadow-white: 0 8px 12px -3px rgba(255, 255, 255,.20);
+  --benjamin-shadow-black: 0 0 12px 4px rgba(0, 0, 0,.05);
+  --benjamin-shadow-yellow: 0px 38px 77px -26px rgba(255, 201, 62,.12);
+  --benjamin-shadow-pink: 0 8px 12px -3px #ee7d7936;
+  --benjamin-logo-color: linear-gradient(215deg,#4584ff 30%,#ff7676 70%);
+}
+
+::selection {
+  background: var(--benjamin-blue);
+  color: var(--benjamin-white);
+}
+
+[data-theme=light] {
+  --benjamin-theme: #425AEF;
+  --benjamin-blue: #425AEF;
+  --benjamin-red: #D8213C;
+  --benjamin-green: #008200;
+  --benjamin-fontcolor: #363636;
+  --benjamin-background: #f4f4f4;
+  --benjamin-reverse: #000;
+  --benjamin-maskbg: rgba(255, 255, 255, 0.6);
+  --benjamin-hovertext: #5374ff;
+  --benjamin-ahoverbg: #F7F7FA;
+  --benjamin-lighttext: #ef794f;
+  --benjamin-secondtext: rgba(60, 60, 67, 0.6);
+  --benjamin-scrollbar: rgba(60, 60, 67, 0.4);
+  --benjamin-card-btn-bg: #f1f2f2;
+  --benjamin-post-blockquote-bg: #fafcff;
+  --benjamin-post-tabs-bg: #f2f5f8;
+  --benjamin-secondbg: #f1f2f2;
+  --benjamin-shadow-nav:0 5px 12px -5px rgba(102, 68, 68, 0.05);
+  --benjamin-card-bg: #fff;
+  --benjamin-shadow-lightblack:0 5px 12px -5px rgba(102, 68, 68, 0.00);
+  --benjamin-shadow-light2black:0 5px 12px -5px rgba(102, 68, 68, 0.00);
+}
+
+[data-theme=dark] {
+  --benjamin-theme: #0084FF;
+  --benjamin-blue: #0084FF;
+  --benjamin-red: #FF3842;
+  --benjamin-green: #00FF00;
+  --benjamin-fontcolor: #F7F7FA;
+  --benjamin-background: #18171d;
+  --benjamin-reverse: #fff;
+  --benjamin-maskbg: rgba(0,0,0, 0.6);
+  --benjamin-hovertext: #0A84FF;
+  --benjamin-ahoverbg: #fff;
+  --benjamin-lighttext: #f2b94b;
+  --benjamin-secondtext: #a1a2b8;
+  --benjamin-scrollbar: rgba(200, 200, 223, 0.4);
+  --benjamin-card-btn-bg: #2e2d38;
+  --benjamin-post-blockquote-bg: #000;
+  --benjamin-post-tabs-bg: #121212;
+  --benjamin-secondbg: #30343f;
+  --benjamin-shadow-nav:0 5px 20px 0px rgba(28, 28, 28, 0.4);
+  --benjamin-card-bg: #1d1b26;
+  --benjamin-shadow-lightblack:0 5px 12px -5px rgba(102, 68, 68, 0.0);
+  --benjamin-shadow-light2black:0 5px 12px -5px rgba(102, 68, 68, 0.0);
+}
+
+/* bb哔哔 */
+/* bb样式 */
+
+.timeline ul li{
+position: relative;
+padding-left: 2.5rem;
+}
+
+/* 标题 */
+.bb-info{
+display: inline;
+float: right;
+line-height: 3.7rem;
+color: var(--benjamin-secondtext);
+}
+
+/* 每条动态 */
+#bber > section > ul > div > li > div{
+display: flex;
+flex-direction: initial;
+flex-wrap: wrap;
+background: var(--benjamin-post-blockquote-bg);
+box-shadow: var(--benjamin-shadow-lightblack);
+border-radius: 12px;
+padding: 8px 16px;
+margin-top: 12px;
+}
+
+#bber p{
+margin: 0;
+}
+
+#bber .datafrom i{
+margin-right: 4px;
+}
+
+/* 时间 */
+#bber > section > ul > div > li > div .datatime{
+order: 1;
+color: var(--benjamin-secondtext);
+font-size: 0.6rem;
+}
+
+/* 内容 */
+#bber > section > ul > div > li > div .datacont{
+order: 0;
+font-size: 1rem;
+font-weight: bold;
+color: var(--benjamin-lighttext);
+width: 100%;
+line-height: 1.38;
+margin: 8px 0;
+}
+
+/* 设备 */
+#bber > section > ul > div > li > div .datafrom{
+order: 2;
+color: var(--benjamin-secondtext);
+font-size: 0.6rem!important;
+margin-left: 8px;
+}
+#bber > section > ul > div > li > div .datafrom small{
+font-size: 100%;
+}
+
+
+
+/* 时间线 */
+.timeline ul li::before {
+position: absolute;
+top: 0.5rem;
+left: 0rem;
+z-index: 1;
+width: 2rem;
+height: 2rem;
+border-radius: 8px;
+background: var(--card-bg);
+content: "";
+background-size: 2rem;
+}
+
+/* 加载更多 */
+.load-btn.button-load{
+background: var(--benjamin-card-btn-bg);
+color: var(--benjamin-fontcolor);
+padding: 12px 12px;
+margin: 8px 0;
+width: 100%;
+text-align: center;
+border-radius: 12px;
+transition: 0.3s;
+font-weight: bold;
+}
+
+.load-btn.button-load:hover{
+background: var(--benjamin-main);
+color: var(--benjamin-white);
+transition: 0.3s;
+box-shadow: var(--benjamin-shadow-blue);
+}
+
+/* 图标 */
+.fa-qq {
+  color: #10a4ff;
+}
+.fa-weixin {
+  color: #00bf03;
+}
+
+.fa-heart {
+  color: red;
+}
+
+.fa-android {
+  color: #3DDB85;
+}
+
+.fa-windows {
+  color: #00AEF0;
+}
+
+/* iconfont */
+@font-face {
+  font-family: "iconfont"; /* Project id 3163352 */
+  /* Color fonts */
+  src: 
+       url('//at.alicdn.com/t/font_3163352_vogxwfvb1e.woff?t=1643191177280') format('woff'),
+       url('//at.alicdn.com/t/font_3163352_vogxwfvb1e.ttf?t=1643191177280') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 20px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-lidan:before {
+  content: "\e6c3";
+}
+
+.icon-xinshuai:before {
+  content: "\e609";
+}
+
+.icon-xin:before {
+  content: "\e699";
+}
+
+.icon-shejiaotubiao-06:before {
+  content: "\e641";
+}
+
+.icon-aixin:before {
+  content: "\f4cf";
+}
+
+.icon-xuanxiang:before {
+  content: "\f5bb";
+}
+
+.icon-xiehou:before {
+  content: "\fc1f";
+}
+
+.icon-a-qiqiujieriqingzhu:before {
+  content: "\e775";
+}
+
+/* 分割线图标 */
+hr:before {
+  content: '\f598';  /* Font Awesome V5 */
+}
+/* 评论框图标 */
+
+.fa-comments:before {
+  content: '\f598';  /* Font Awesome V5 */
+}
